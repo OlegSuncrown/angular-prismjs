@@ -1,19 +1,19 @@
 <h1>Prism.js</h1>
 <p>Editable Textarea That Supports Syntax-Highlighted Code with Angular and Prism.js</p>
-
 <form [formGroup]="form">
   <div class="code-container line-numbers">
     <textarea
       #textArea
+      placeholder="Add your code (default html)"
       class="text-area-code-editor"
       formControlName="content"
       spellcheck="false"
     ></textarea>
     <pre
-      #pre
       aria-hidden="true"
-      class="pre"
-    ><code #codeContent [ngClass]="['code', 'language-' + codeType]"></code>
+      class="pre line-numbers"
+      #pre
+    ><code [ngClass]="['code', 'language-' + codeType]" #codeContent></code>
     </pre>
   </div>
 </form>
